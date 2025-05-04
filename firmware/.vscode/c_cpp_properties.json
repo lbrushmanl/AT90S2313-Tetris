@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "name": "macos",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/drivers/inc/**",
+                "${workspaceFolder}/drivers/utils/**"
+            ],
+            "defines": [],
+            "compilerPath": "avr-gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "macos-clang-x64",
+            "compilerArgs": [
+                "-mmcu=at90S2313",     // Will ensure MCU defines are set correctly
+                // "-mmcu=atmega8",     // Will ensure MCU defines are set correctly
+                "-DF_CPU=16000000UL",   // Will ensure F_CPU is set correctly
+                "-Os"                   // Will avoid optimization warnings re: _delay
+            ]
+        }
+    ],
+    "version": 4
+}

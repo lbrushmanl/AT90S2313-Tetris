@@ -1,0 +1,80 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "make",
+            "detail": "Run make",
+            "type": "shell",
+            "command": "${input:makeTarget} ",
+            "options": {
+                "env": {
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "make controller",
+            "detail": "Run make",
+            "type": "shell",
+            "command": "make TARGET=tiny-hawk-controller all",
+            "options": {
+                "env": {
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "make clean",
+            "detail": "Run make clean",
+            "type": "shell",
+            "command": "make clean",
+            "options": {
+                "env": {
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build"
+            }
+        },
+        {
+            "label": "make size",
+            "detail": "Run make size",
+            "type": "shell",
+            "command": "make size",
+            "options": {
+                "env": {
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build"
+            }
+        }
+    ],
+    "inputs": [
+        { 
+            "type": "pickString", 
+            "id": "makeTarget", "description": "Select a build target", 
+            "options": [
+                "make all", "sudo make flash", "make disassemble", "make debug",
+                "make TARGET=tiny-hawk-controller all", "make TARGET=tiny-hawk-controller flash",
+            ],
+            "default": "make all"
+        }
+    ]
+}
